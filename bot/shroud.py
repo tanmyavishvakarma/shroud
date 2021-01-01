@@ -1,8 +1,12 @@
 import discord
+from dotenv import load_dotenv
+load_dotenv()
 import os
 import time
 
+
 client = discord.Client()
+
 
 @client.event
 async def on_ready():
@@ -17,4 +21,4 @@ async def on_message(message):
         time.sleep(10)
         await message.delete()
 
-client.run('Nzk0NTc2MDUwMzg5Nzc4NDMy.X-80nA.4Ke-_h8BVqUfs4p1t99pJYu2hyA')
+client.run(os.getenv('TOKEN'))
